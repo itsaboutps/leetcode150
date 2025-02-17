@@ -5,7 +5,7 @@ public class Anagram {
     public static void main(String[] args) {
         String s = "car";
         String t = "rat";
-        System.out.println(isAnagramMp(s, t));
+        // System.out.println(isAnagramMp(s, t));
         System.out.println(isAnagramSort(s, t));
     }
 
