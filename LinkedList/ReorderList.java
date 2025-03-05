@@ -17,13 +17,36 @@ public class ReorderList {
         n4.next = n5;
 
         reorderList(n1);
-        printLinkedList(solutionUsing(n1));
+        solutionUsing(n1);
     }
 
-    private static ListNode solutionUsing(ListNode head) {
-        //optimsed approach left
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'solutionUsing'");
+    private static void solutionUsing(ListNode head) {
+        
+        ListNode fast = head, slow = head;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        ListNode cur = slow.next;
+        slow.next = null;
+
+        ListNode pre = null;
+        while (cur != null) {
+            ListNode t = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = t;
+        }
+        cur = head;
+
+        while (pre != null) {
+            ListNode t = pre.next;
+            pre.next = cur.next;
+            cur.next = pre;
+            cur = pre.next;
+            pre = t;
+        }
     }
 
     private static void reorderList(ListNode head) {
@@ -33,6 +56,8 @@ public class ReorderList {
         }
 
         ArrayList<ListNode> array = new ArrayList<>();
+
+
         ListNode curr = head;
 
         while (curr != null) {
@@ -44,7 +69,7 @@ public class ReorderList {
         int j = array.size() - 1;
 
         while (i < j) {
-            array.get(i).next = array.get(i);
+            array.get(i).next = array.get(j);
             i++;
             if (i >= j) {
                 break;
@@ -56,6 +81,10 @@ public class ReorderList {
         array.get(i).next = null;
 
         System.out.println(array);
+        for (ListNode elem : array) {
+            System.out.println(elem.val);
+            
+        }
 
     }
 
