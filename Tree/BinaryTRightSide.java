@@ -5,8 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import LinkedList.ListNode;
-
 public class BinaryTRightSide {
     public static void main(String[] args) {
         System.out.println("Binary Tree Right Side");
