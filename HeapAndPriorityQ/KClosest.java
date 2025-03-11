@@ -9,29 +9,23 @@ public class KClosest {
         kClosest(points, k);
     }
 
-    private static void kClosest(int[][] points, int k) {
+    private static void kClosest(int[][] points, int K) {
 
-        HashMap<Integer, int[]> hashMap = new HashMap<>();
-        PriorityQueue<Integer> minHeap  = new PriorityQueue<>();
+        PriorityQueue<int[]> minHeap  = new PriorityQueue<>(Comparator.comparing(a -> a[0]));
 
 
         for(int[] point:points){
-            int distance = point[0]+point[1];
-            hashMap.put(distance, point);
-            minHeap.offer(distance);
-            if(minHeap.size()>k){
-                minHeap.poll();
-            }
+            int dist = point[0] * point[0] + point[1] * point[1];
+            minHeap.offer(new int[]{dist, point[0], point[1]});
         }
-        int[][] res =  new int[k][k];
-        int count =0;
-        while(minHeap.size()>0){
-            int f = minHeap.poll();
-            int[] val = hashMap.get(f); 
-            res[count++] = val;
+
+        int[][] result = new int[K][2];
+        for (int i = 0; i < K; ++i) {
+            int[] point = minHeap.poll();
+            result[i] = new int[]{point[1], point[2]};
         }
         
 
-        System.out.println(Arrays.deepToString(res));
+        System.out.println(Arrays.deepToString(result));
     }
 }
