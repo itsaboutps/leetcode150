@@ -14,6 +14,10 @@ public class NQueen {
     }
 }
 
+
+// Time complexity: O ( n ! ) 
+// Space complexity: O ( n 2 ) 
+
 class Solution {
     Set<Integer> col = new HashSet<>();
     Set<Integer> postDiag = new HashSet<>();
