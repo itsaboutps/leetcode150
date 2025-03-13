@@ -1,3 +1,6 @@
+package StacksQ;
+import java.util.Stack;
+
 class MinStack {
     int min =Integer.MAX_VALUE;
     Stack<Integer> st=new Stack<>();
