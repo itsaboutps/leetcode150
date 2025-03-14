@@ -24,7 +24,7 @@ public class ValidateBST {
  *     }
  * }
  */
-class Solution {
+class SolutionValidateBST {
     public boolean isValidBST(TreeNode root) {
         return dfs(root,Long.MIN_VALUE, Long.MAX_VALUE);
     }

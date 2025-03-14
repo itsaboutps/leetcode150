@@ -7,24 +7,16 @@ import java.util.List;
 import java.util.Set;
 
 public class NQueen {
-    public static void main(String[] args) {
-        System.out.println("NQueen");
-        Solution solution = new Solution();
-        System.out.println(solution.solveNQueens(4));
-    }
-}
 
-
-// Time complexity: O ( n ! ) 
-// Space complexity: O ( n 2 ) 
-
-class Solution {
     Set<Integer> col = new HashSet<>();
     Set<Integer> postDiag = new HashSet<>();
     Set<Integer> negDiag = new HashSet<>();
     List<List<String>> res = new ArrayList<>();
-
-    public List<List<String>> solveNQueens(int n) {
+    public static void main(String[] args) {
+        System.out.println("NQueen");
+        System.out.println(solveNQueens(4));
+    }
+    public static List<List<String>> solveNQueens(int n) {
         char[][] board = new char[n][n];
         for (char[] row : board) {
             Arrays.fill(row, '.');
@@ -34,7 +26,7 @@ class Solution {
         return res;
     }
 
-    private void backtrack(int r, int n, char[][] board) {
+    private static void backtrack(int r, int n, char[][] board) {
         if (r == n) {
             // hitting the base condition
             List<String> copy = new ArrayList<>();
@@ -66,3 +58,13 @@ class Solution {
         }
     }
 }
+
+
+// Time complexity: O ( n ! ) 
+// Space complexity: O ( n 2 ) 
+
+//class Solution {
+
+
+
+//}

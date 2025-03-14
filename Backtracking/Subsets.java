@@ -3,7 +3,6 @@ package Backtracking;
 import java.util.ArrayList;
 import java.util.List;
 
-// Backtracking/image.png
 public class Subsets {
     public static void main(String[] args) {
         System.out.println("Subsets");
@@ -13,7 +12,7 @@ public class Subsets {
     }
 }
 
-class Solution {
+class SolutionSubsets {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         res.add(new ArrayList<>());
@@ -36,15 +35,13 @@ class SolutionBacktracking {
     private int[] nums;
 
     public List<List<Integer>> subsets(int[] nums) {
-
         this.nums = nums;
         dfs(0);
         return ans;
-
     }
 
     private void dfs(int i) {
-         if (i == nums.length) {
+        if (i == nums.length) {
             ans.add(new ArrayList<>(t));
             return;
         }

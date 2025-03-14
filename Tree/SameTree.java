@@ -1,4 +1,3 @@
-
 package Tree;
 
 import java.util.LinkedList;
@@ -9,25 +8,9 @@ public class SameTree {
     public static void main(String[] args) {
         System.out.println();
     }
-    
 }
 
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-class SolutionDFS {
+class SolutionSameTree {
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if(p==null && q ==null) return true;
 
@@ -39,24 +22,7 @@ class SolutionDFS {
     }
 }
 
-
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-
-  class SolutionIterativeDFS {
+class SolutionIterativeDFS {
     public boolean isSameTree(TreeNode p, TreeNode q) {
         Stack<TreeNode[]> stack = new Stack<>();
         stack.push(new TreeNode[]{p, q});
@@ -75,23 +41,7 @@ class SolutionDFS {
         
         return true;
     }
-
-
-    /**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
+}
 
 class SolutionBFS {
     public boolean isSameTree(TreeNode p, TreeNode q) {
@@ -118,5 +68,4 @@ class SolutionBFS {
 
         return true;
     }
-}
 }

@@ -26,30 +26,25 @@ public class KthSmallestInTree {
  * }
  */
 //! BRUTE FORCE APPROACH
-class Solution {
+class SolutionKthSmallestInTree {
     public int kthSmallest(TreeNode root, int k) {
-        List<Integer> list = 
-        levelOrder(root);
-
+        List<Integer> list = levelOrder(root);
         Collections.sort(list);
-
         return list.get(k-1);
     }
 
     List<Integer> levelOrder(TreeNode root) {
-    // Initialize queue, add root node
-    Queue<TreeNode> queue = new LinkedList<>();
-    queue.add(root);
-    // Initialize a list to store the traversal sequence
-    List<Integer> list = new ArrayList<>();
-    while (!queue.isEmpty()) {
-        TreeNode node = queue.poll(); // Queue dequeues
-        list.add(node.val);           // Save node value
-        if (node.left != null)
-            queue.offer(node.left);   // Left child node enqueues
-        if (node.right != null)
-            queue.offer(node.right);  // Right child node enqueues
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        List<Integer> list = new ArrayList<>();
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            list.add(node.val);
+            if (node.left != null)
+                queue.offer(node.left);
+            if (node.right != null)
+                queue.offer(node.right);
+        }
+        return list;
     }
-    return list;
-}
 }
