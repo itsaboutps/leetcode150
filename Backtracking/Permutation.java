@@ -24,7 +24,6 @@ public class Permutation {
                 List<Integer> p_copy = new ArrayList<>(p);
                 p_copy.add(i, nums[0]);
                 res.add(p_copy);
-                System.out.println(res);
             }
         }
         return res;
