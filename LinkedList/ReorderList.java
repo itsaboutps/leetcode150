@@ -16,30 +16,58 @@ public class ReorderList {
         n3.next = n4;
         n4.next = n5;
 
-        reorderList(n1);
+        // reorderList(n1);
         solutionUsing(n1);
     }
 
     private static void solutionUsing(ListNode head) {
         
+
+        // 1. Find the middle of the list
+        // 2. Reverse the second half
+        // 3. Merge the two halves
+        
         ListNode fast = head, slow = head;
+
+        // Find the middle of the list
+        // 1->2->3->4->5->null
+        // 1->2->3->null    
+        // 4->5->null
+        // 1->2->3->null
+        // 4->null
+        // 5->null
+        // 1->2->3->null
+        // 4->null
+        // 5->null
+
         while (fast.next != null && fast.next.next != null) {
+            // 1->2->3->4->5->null
             slow = slow.next;
+        
             fast = fast.next.next;
         }
+
+        // 1->2->3->4->5->null
+        // 1->2->3->null
+        // 4->5->null
 
         ListNode cur = slow.next;
         slow.next = null;
 
         ListNode pre = null;
+
+        // 1->2->3->null
         while (cur != null) {
             ListNode t = cur.next;
             cur.next = pre;
             pre = cur;
             cur = t;
         }
+
+        // 1->2->3->null
         cur = head;
 
+        //
         while (pre != null) {
             ListNode t = pre.next;
             pre.next = cur.next;

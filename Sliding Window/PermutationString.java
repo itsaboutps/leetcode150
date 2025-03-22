@@ -20,8 +20,8 @@ public class PermutationString {
         char[] s2Count = new char[26];
 
         for (int i = 0; i < len1; i++) {
-            s1Count[s1.charAt(i) - 'A']++;
-            s2Count[s2.charAt(i) - 'A']++;
+            s1Count[s1.charAt(i) - 'a']++;
+            s2Count[s2.charAt(i) - 'a']++;
         }
 
         int matches = 0;

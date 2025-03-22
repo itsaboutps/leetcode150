@@ -1,13 +1,21 @@
 package StacksQ;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class RPN {
     public static void main(String[] args) {
         System.out.println("RPN");
         String[] tokens = { "2","1","+","3","*" };
 
-        System.out.println(rpn(tokens));
+        // System.out.println(rpn(tokens));
 
         // System.out.println(optimsedApproach(tokens));
+
+
+        List<String> tokenList = new ArrayList<>(Arrays.asList(tokens));
+        System.out.println(dfs(tokenList));
     }
 
     private static int optimsedApproach(String[] tokens) {
@@ -31,6 +39,31 @@ public class RPN {
         }
         return stack.pop();
         // TODO Auto-generated method stub
+    }
+
+
+    private static int dfs(List<String> tokens) {
+        String token = tokens.remove(tokens.size() - 1);
+        
+        if (!"+-*/".contains(token)) {
+            return Integer.parseInt(token);
+        }
+
+        int right = dfs(tokens);
+        int left = dfs(tokens);
+
+        switch (token) {
+            case "+":
+                return left + right;
+            case "-":
+                return left - right;
+            case "*":
+                return left * right;
+            case "/":
+                return left / right;
+        }
+
+        return 0;
     }
 
     private static int rpn(String[] tokens) {

@@ -3,7 +3,7 @@ package StacksQ;
 public class ValidParenthesis {
     public static void main(String[] args) {
         System.out.println("Valid Parentheses:: ");
-        String s = "([])";
+        String s = "[]";
         System.out.print(optimised(s));
         // System.out.print(myApproach(s));
 

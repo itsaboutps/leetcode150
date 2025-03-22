@@ -63,7 +63,14 @@ public class MergeTwoSorted {
     }
 
     private static ListNode mergeTwoSorted(ListNode list1, ListNode list2) {
+        
+        // ! this is the dummy node
+        // ! this is the node which will be used to traverse the linked list
+        // ! this is the node which will be used to return the final answer
         ListNode dummy = new ListNode(0); // this nodes are important to return the final answer
+        
+        // ! this is the node which will be used to traverse the linked list
+        // ! this is the node which will be used to return the final answer
         ListNode node = dummy; // ! this node is important for traversal
 
         while (list1 != null && list2 != null) {
