@@ -17,10 +17,11 @@ public class ReverseLinkedList {
         n4.next = n5;
 
         // !using iterative approach
-        // ListNode newHead = reverseUsingIterativeApproach(n1);
+        ListNode newHead = reverseUsingIterativeApproach(n1);
 
         // !using recursive approach
-        ListNode newHead = reverseRecursive(n1);
+        // ListNode newHead = reverseRecursive(n1);
+        // ListNode newHead = approach1(n1, null);
 
         while (newHead != null) {
             System.out.println(newHead.val);

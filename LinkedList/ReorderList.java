@@ -21,17 +21,16 @@ public class ReorderList {
     }
 
     private static void solutionUsing(ListNode head) {
-        
 
         // 1. Find the middle of the list
         // 2. Reverse the second half
         // 3. Merge the two halves
-        
+
         ListNode fast = head, slow = head;
 
         // Find the middle of the list
         // 1->2->3->4->5->null
-        // 1->2->3->null    
+        // 1->2->3->null
         // 4->5->null
         // 1->2->3->null
         // 4->null
@@ -43,7 +42,7 @@ public class ReorderList {
         while (fast.next != null && fast.next.next != null) {
             // 1->2->3->4->5->null
             slow = slow.next;
-        
+
             fast = fast.next.next;
         }
 
@@ -85,7 +84,6 @@ public class ReorderList {
 
         ArrayList<ListNode> array = new ArrayList<>();
 
-
         ListNode curr = head;
 
         while (curr != null) {
@@ -111,7 +109,7 @@ public class ReorderList {
         System.out.println(array);
         for (ListNode elem : array) {
             System.out.println(elem.val);
-            
+
         }
 
     }
