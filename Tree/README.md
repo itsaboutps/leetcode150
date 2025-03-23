@@ -2,7 +2,7 @@ https://camo.githubusercontent.com/42467552c087fb92a279741a2f72fdaa0bbb3427e07c8
 
 
 
-DFS of a tree is more like:
+# DFS of a tree is more like:
 
 function dfs(root) {
 	if (condition）{
