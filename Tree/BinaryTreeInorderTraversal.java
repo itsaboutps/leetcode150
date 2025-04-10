@@ -2,6 +2,9 @@ package Tree;
 import java.util.*;
 
 public class BinaryTreeInorderTraversal {
+    public static void main(String[] args) {
+        
+    }
     
 }
 

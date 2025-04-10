@@ -23,8 +23,5 @@ public class ProductOfArrayWithoutItself {
         System.out.println(Arrays.toString(ans));
         return ans;
 
-        // TODO Auto-generated method stub
-        // throw new UnsupportedOperationException("Unimplemented method 'fn'");
-
     }
 }
